@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Activos Bisa</title>
+    <link href="~/Content/datepicker/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/datepicker/locales/bootstrap-datepicker.es.min.js"></script>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas:
+                "header   header   header"
+                "main   main   main"
+                "footer   footer  footer ";
+            grid-template-columns: 277px auto 385px;
+            grid-template-rows: auto;
+        }
+
+        /*  Dispositivos large (desktops, 992px and up) */
+        @@media (min-width: 992px) {
+            body {
+                display: grid;
+                grid-template-areas:
+                    "header   header   header"
+                    "main   main   main"
+                    "footer   footer  footer ";
+                grid-template-columns: 20px auto 185px;
+                grid-template-rows: auto;
+            }
+        }
+
+        /*  Dispositivos Extra large (large desktops, 1200px and up) */
+        @@media (min-width: 1200px) {
+            body {
+                display: grid;
+                grid-template-areas:
+                    "header   header   header"
+                    "main   main   main"
+                    "footer   footer  footer ";
+                grid-template-columns: 50px auto 185px;
+                grid-template-rows: auto;
+            }
+        }
+
+        /* Dispositivos Extra large (large desktops, 1366px and up)
+
+        Dispositivos Extra large (large desktops, 1920px and up) */
+
+        @@media (max-width: 1680px) {
+            body {
+                display: grid;
+                grid-template-areas:
+                    "header   header   header"
+                    "sidebar1   main   sidebar2"
+                    "footer   footer  footer ";
+                grid-template-columns: 180px auto 290px;
+                grid-template-rows: auto;
+            }
+        }
+
+        @@media (max-width: 1260px) {
+            body {
+                font-family: "flexo_regular", sans-serif;
+                display: grid;
+                grid-template-areas:
+                    "header   header   header"
+                    "sidebar1   main   sidebar2"
+                    "footer   footer  footer ";
+                grid-template-columns: 20px auto 185px;
+                grid-template-rows: auto;
+            }
+
+            .menuPro {
+                justify-content: center;
+                align-items: center;
+                display: inline;
+            }
+
+            .StepProgress {
+                padding-left: 55px;
+            }
+
+                .StepProgress::before {
+                    left: 25px;
+                }
+        }
+
+        @@media (max-width: 500px) {
+            body {
+                font-family: "flexo_regular", sans-serif;
+                display: grid;
+                grid-template-areas:
+                    "header"
+                    "main";
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+            }
+
+            .o-sidebar2 {
+                display: none;
+            }
+
+            .o-footer {
+                display: none;
+            }
+        }
+
+
+
+        .o-header {
+            background: #2864CC;
+            grid-area: header;
+            padding: 0rem;
+        }
+
+        .o-sidebar1 {
+            background: rgba(0, 43, 118, 0.1);
+            grid-area: sidebar1;
+        }
+
+        .o-main {
+            background: #FFFFFF;
+            grid-area: main;
+        }
+
+        .o-sidebar2 {
+            background: rgba(83, 96, 126, 0.1);
+            grid-area: sidebar2;
+        }
+
+        .o-footer {
+            grid-area: footer;
+            padding: 1rem;
+        }
+
+        .grid-1 {
+            display: grid;
+            width: 100%;
+            /*max-width: 750px;*/
+            margin: 0 auto;
+            grid-template-columns: repeat(6, 1fr);
+            /*grid-template-rows: 96px 90vh;*/
+            grid-template-rows: 96px;
+            /*grid-gap: 20px;*/
+            grid-template-areas: "header   header   header   header   header   header"
+                "sidebar1   main   main   main   main   sidebar2";
+        }
+
+            /* items */
+
+            .grid-1 div {
+                color: none;
+                /*font-size: 20px;*/
+                /*padding: 15px;*/
+                /*padding: 20px 10px;*/
+            }
+
+        /* specific item styles */
+
+        .item-1 {
+            background: #002B76;
+            grid-area: header;
+            padding: 20px 10px;
+        }
+
+        .item-2 {
+            background: rgba(0, 43, 118, 0.1);
+            grid-area: sidebar1;
+        }
+
+        .item-3 {
+            background: #FFFFFF;
+            grid-area: main;
+        }
+
+        .item-4 {
+            background: rgba(83, 96, 126, 0.1);
+            grid-area: sidebar2;
+        }
+
+        .form-select {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+            -moz-padding-start: calc(0.75rem - 3px);
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 24px;
+            color: rgba(50, 51, 92, 0.8);
+            background-color: #F6F7F9;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 16px 12px;
+            border: 0px solid #848DA3;
+            border-radius: 5px 5px 0px 0px;
+            border-bottom: 1px solid #848DA3;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+            .form-select:focus {
+                border-color: #848DA3;
+                outline: 0;
+                box-shadow: rgba(132, 141, 163, 1) 0px 10px 10px -10px;
+                /*box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);*/
+            }
+
+            .form-select:disabled {
+                background-color: #848DA3;
+            }
+
+            .form-select:-moz-focusring {
+                color: transparent;
+                text-shadow: 0 0 0 #212529;
+            }
+
+
+            .was-validated .form-select:valid, .form-select.is-valid {
+                border-color: #F6F7F9;
+            }
+
+                .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
+                    border-color: #F6F7F9;
+                    box-shadow: rgba(132, 141, 163, 1) 0px 10px 10px -10px;
+                    /*box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);*/
+                }
+
+            .was-validated .form-select:invalid, .form-select.is-invalid {
+                border-color: #dc3545;
+            }
+
+                .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
+                    padding-right: 4.125rem;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+                    background-position: right 0.75rem center, center right 2.25rem;
+                    background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+                }
+
+                .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
+                    border-color: #dc3545;
+                    box-shadow: rgba(132, 141, 163, 1) 0px 10px 10px -10px;
+                    /*box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);*/
+                }
+
+        .nav-link {
+            /*  color: rgb(1 41 157 / 84%); */
+            color: #073d73;
+        }
+    </style>
+</head>
+<body>
+    <div class="o-header header">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: #FFFFFF;">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="~/Content/Imagenes/Banners/gamlp.png" alt="logo del sitio" width="150">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item bg-first p-2">
+                                <a class="nav-link text-uppercase fw-bold parent-item " aria-current="page" href="@Url.Action("Index", "Home")">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown bg-first p-2">
+                                <a class="nav-link dropdown-toggle text-uppercase color-first parent-item" href="#" id="navbarDropdownMenuLinkUsuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Registro Empresas
+                                </a>
+                                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("NewEmpresa", "Alcaldia")">Registrar Nuevo</a></li>
+                                    @*<li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("NewTarifario", "Alcaldia")">Registrar Tarifario</a></li>*@
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListEmpresa", "Alcaldia")">Lista Empresas</a></li>
+                                    @*<li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListVia", "Alcaldia")">Lista Vias</a></li>*@
+                                </ul>
+                            </li>
+                           
+                            <!--<li class="nav-item dropdown bg-first p-2">
+                                <a class="nav-link dropdown-toggle text-uppercase color-first parent-item" href="#" id="navbarDropdownMenuLinkUsuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Registro Tarifarios
+                                </a>
+                                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("NewTarifario", "Tarifario")">Registrar Nuevo</a></li>
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListTarifario", "Tarifario")">Lista Tarifario</a></li>-->
+                                    @*<li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListVia", "Alcaldia")">Lista Vias</a></li>*@
+                                <!--</ul>
+                            </li>
+                            <li class="nav-item dropdown bg-first p-2">
+                                <a class="nav-link dropdown-toggle text-uppercase color-first parent-item" href="#" id="navbarDropdownMenuLinkUsuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Registro Vías
+                                </a>
+                                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("NewVia", "Via")">Registrar Nuevo</a></li>
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListVia", "Via")">Lista Vias</a></li>
+                                </ul>
+                            </li>-->
+                            <li class="nav-item dropdown bg-first p-2">
+                                <a class="nav-link dropdown-toggle text-uppercase color-first parent-item" href="#" id="navbarDropdownMenuLinkUsuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Designacion Vias
+                                </a>
+                                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("Index", "Asignacion")">Nueva asignación</a></li>
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListAsignacion", "Asignacion")">Lista de asignacion</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item bg-first p-2 dropdown">
+                                <a class="nav-link dropdown-toggle text-uppercase color-first parent-item" href="sitios.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Usuarios
+                                </a>
+                                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("Index", "Usuario")">Nuevo Usuario</a></li>
+                                    <li><a class="dropdown-item text-uppercase color-first" href="@Url.Action("ListUsuario", "Usuario")"> Lista de Usuario</a></li>
+                                </ul>
+                            </li>
+                            @*<li class="nav-item bg-first p-2">
+                                <a class="nav-link text-uppercase color-first parent-item" href="@Url.Action("Index", "Reporte")">Reportes</a>
+                            </li>*@
+                            <li class="nav-item bg-first p-2">
+                                <a class="nav-link text-uppercase color-first parent-item" href="contacto.html">Cerrar</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+
+    @*<div class="container body-content">*@
+    @*@RenderBody()*@
+    <div class="o-sidebar1"></div>
+    <div class="o-sidebar2"></div>
+    <div class="o-main">
+        @RenderBody()
+    </div>
+
+
+    @*</div>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <footer class="o-footer footer bg-site-primary">
+        <div class="footer-first">
+            <div class="row">
+                <div class="col-12">
+                    <span class="footer-title"><strong>Sistema de Estacionamiento Urbano</strong></span>
+                </div>
+                <div class="col-12 text-justify">
+                    <p>© @DateTime.Now.Year - Desarrollado por NEOSEG</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+
+</html>

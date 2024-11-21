@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "NewEmpresa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#gerFechaN').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy',
+            language: "es",
+            endDate: new Date(new Date().setDate(new Date().getDate()))
+        });
+    });
+
+</script>
+@*<style>
+        .custom-file-upload {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            background-color: transparent;
+            border: 1px solid #F26E29;
+            border-radius: 0.375rem;
+            color: #F26E29;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+            .custom-file-upload input[type="file"] {
+                display: none;
+            }
+
+            /* Cambia el color cuando se selecciona un archivo */
+            .custom-file-upload.selected {
+                background-color: #F26E29;
+                color: #FFFFFF;
+            }
+    </style>*@
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container" style="background-color: #f2f6fa">
+    <div style="padding:20px">
+        <h2>Nuevo registro de empresas</h2>
+        @*<form id="formEmpresa" method="post" autocomplete="off">*@
+        <input type="hidden" name="empEstado" id="empEstado" value="" />
+        <div class="mb-3">
+            <label class="texto2">Ingresa los datos de la forma más precisa posible</label>
+        </div>
+        <!--<div class="row">-->
+        @*<div class="col-sm-6 col-lg-6 col-xl-6">
+            <div class="form-floating mb-3">
+                <select class="form-select" id="gerExtenc" name="gerExtenc" aria-label="Floating label select example">
+                    <option value="" selected>SELECCIONE UNA REGIONAL</option>
+                    <option value="LA PAZ">LA PAZ</option>
+                    <option value="SANTA CRUZ">SANTA CRUZ</option>
+                    <option value="BENI">BENI</option>
+                    <option value="POTOSI">POTOSI</option>
+                    <option value="ORURO">ORURO</option>
+                    <option value="TARIJA">TARIJA</option>
+                    <option value="PANDO">PANDO</option>
+                </select>
+                <label for="gerExtenc">Regional Perteneciente</label>
+            </div>
+
+        </div>*@
+
+        <!--</div>-->
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="numcite" name="numcite" value='' placeholder="Número de Cite">
+                    <label for="floatingInput">Nombre Empresa</label>
+                    <span class="texto9" id="empRazonSError">Nombre Empresa</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="numcite" name="numcite" value='' placeholder="Nombre Empresa">
+                    <label for="floatingInput">Representante</label>
+                    <span class="texto9" id="empRazonSError">Representante</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="Responsable">
+                    <label for="floatingInput">Fecha Autorización</label>
+                    <span class="texto9" id="empRazonSError">Fecha Autorización</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="NIT">
+                    <label for="floatingInput">Fecha Autorización</label>
+                    <span class="texto9" id="empRazonSError">Fecha Autorización</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="Responsable">
+                    <label for="floatingInput">NIT</label>
+                    <span class="texto9" id="empRazonSError">NIT</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="NIT">
+                    <label for="floatingInput">Correo</label>
+                    <span class="texto9" id="empRazonSError">Correo</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            @*<div class="col-sm-12 col-lg-12 col-xl-12">
+                Cargar documento
+            </div>*@
+
+            <!--<div class="col">
+        <div class="form-floating mb-3">-->
+            @*<input type="file" id="imageFile" accept="image/*" multiple />*@
+            <!--<input type="file" id="archivo9" name="archivo9" accept="application/pdf" />
+
+                <button class="btn btn-outline-primary" href="#">Subir archivo</button>
+            </div>
+        </div>-->
+        </div>
+        <div class="row">
+            @*<div class="col">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="empDepart" name="empDepart" aria-label="Floating label select example">
+                        <option value="" selected>SELECCIONE ÁREA RESPONSABLE</option>
+                        <option value="FINANZAS">FINANZAS</option>
+                        <option value="LEGAL">LEGAL</option>
+                        <option value="AUDITORIA">AUDITORIA</option>
+                        <option value="SEGUROS">SEGUROS</option>
+                        <option value="SEGUROS">NEGOCIOS Y RIESGO</option>
+                    </select>
+                    <label for="empDepart">Designar Área Responsable</label>
+                </div>
+            </div>*@
+            @*<div class="col">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="empDepart" name="empDepart" aria-label="Floating label select example">
+                        <option value="" selected>SELECCIONE UNA OPCIÓN</option>
+                        <option value="PERIÓDICA">PERIÓDICA</option>
+                        <option value="NO PERIÓDICA">NO PERIÓDICA</option>
+                    </select>
+                    <label for="empDepart">Tipo de información</label>
+                </div>
+            </div>*@
+            @*<div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="Serie">
+                    <label for="floatingInput">Encargado de Aprobacion </label>
+                        <span class="texto9" id="empRazonSError">Encargado de Aprobacion</span>
+                </div>
+            </div>*@
+
+
+
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <a href="@Url.Action("Apertura","Formulario")" class="btn btn-outline-primary" style="text-decoration: none;">Volver</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+        @*</form>*@
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#gerCI").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    //url: '/Formulario/AutoCompleteGerente/',
+                    url: '@Url.Action("AutoCompleteGerente", "Formulario")',
+                    data: { "idc": request.term },
+                    type: "POST",
+                    success: function (data) {
+                        $("#gerExtenc").val(data.EXT);
+                        $("#gerComple").val(data.COMPLEMENTO);
+                        $("#gerNombre").val(data.NOMBRE);
+
+                        //$("#repFechaN").val(data.FEC_NACIMIENTO);
+                        var jsonDate = data.FEC_NACIMIENTO;
+                        var f = (new Date(parseInt(jsonDate.substr(6))));
+                        var month = f.getMonth() + 1;
+                        var mes = "";
+                        if (month >= 1 && month < 10) {
+                            mes = "0" + month;
+                        } else {
+                            mes = month;
+                        }
+                        var day = f.getDate();
+                        var dia = "";
+                        if (day >= 1 && day < 10) {
+                            dia = "0" + day;
+                        } else {
+                            dia = day;
+                        }
+                        var year = f.getFullYear();
+                        var fnac = dia + "/" + mes + "/" + year;
+
+                        if (fnac != "31/12/0") {
+                            //console.log(fnac);
+                            $("#gerFechaN").val(fnac);
+                        } else {
+                            $("#gerFechaN").val("");
+                        }
+                    },
+                    error: function (response) {
+                        console.log("Hubo un error 1");
+                        //alert(response.responseText);
+                    },
+                    failure: function (response) {
+                        console.log("Hubo un error 1");
+                        //alert(response.responseText);
+                    }
+                });
+            }
+        });
+    });
+</script>

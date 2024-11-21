@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "NewTarifario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .carga {
+        position: fixed;
+        left: 10px;
+        top: 60px;
+        /*max-width:100%;
+        width:auto;
+        height:auto;*/
+        width: 100%;
+        height: 60%;
+        z-index: 9999;
+        background-image: url('../../Imagenes/CargaArchivo/white_loading.gif');
+        opacity: .8;
+    }
+</style>
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container">
+    <div style="padding:30px;">
+        <div class="row">
+            <h2>Registro nueva Vía</h2>
+        </div>
+        <div class="col-md-3"></div>
+
+        @using (Html.BeginForm("ImportacionBase", "Inicio", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                @*<div class="col-md-3"></div>*@
+
+                <br />
+                <div class="col-md-4 text-center">
+                    <label for="floatingInput" class="fw-bold">Seleccione tipo de Vehículo: </label>
+                </div>
+                <div class="col-md-4 text-center">
+
+                    <input type="checkbox" name="name" value="true" />
+                    <label for="floatingInput">Motocicleta </label>
+                </div>
+                <div class="col-md-4 text-center">
+                    <input type="checkbox" name="name" value="1" />
+                    <label for="floatingInput">Automovil </label>
+                </div>
+                <div class="col-md-4 text-center">
+                    <br />
+                    <label for="floatingInput" class="fw-bold">Seleccione tipo de Tarifa: </label>
+                </div>
+                <div class="col-md-4 text-center">
+                    <br />                   
+                    <input type="checkbox" name="name" value="true" />
+                    <label for="floatingInput">Preferencial </label>
+                </div>
+                <div class="col-md-4 text-center">
+                    <br />
+                    <input type="checkbox" name="name" value="1" />
+                    <label for="floatingInput">Unico </label>
+                </div>
+            </div>
+                <div>
+                    <br />
+                </div>
+                <div class="row">
+
+                    @*<div class="col-md-4" style="margin-left: 197px;">
+            <br />*@
+                    @*<div class="col-sm-6 col-lg-6 col-xl-6">*@
+                    <div class="col-md-6 text-center">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="Serie">
+                            <label for="floatingInput">Dirección </label>
+                            <span class="texto9" id="empRazonSError">Ingese Dirección</span>
+                        </div>
+                    </div>
+                    @*</div>*@
+                    <!--</div>-->
+                    @*<div class="col-md-4" style="margin-left: 197px;">*@
+                    @*<div class="col-sm-6 col-lg-6 col-xl-6">*@
+                    <div class="col-md-6 text-center">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="empRazonS" name="empRazonS" value='' placeholder="Serie">
+                            <label for="floatingInput">Codigo Vía </label>
+                            <span class="texto9" id="empRazonSError">Codigo vía</span>
+                        </div>
+                    </div>
+                    @*</div>*@
+                    @*</div>*@
+
+                </div>
+                @*<div class="col">
+
+        </div>*@
+
+                <div class="row">
+                    <br />
+                    <div class="col-md-3"></div>
+                    <br />
+                    <div class="col-md-6 text-center">
+                        @* <input type="submit" name="enviar" id="enviar" value="Subir Archivo" onclick="carga()" class="btn btn-primary" disabled="disabled" />  | @Html.ActionLink("   Regresar al Inicio    ", "Index", "Principal", null, new { @class = "btn btn-danger" })*@
+                        <button class="btn btn-primary">Guardar </button>
+                    </div>
+                    <div class="col-md-2"></div>
+
+                </div>
+
+                }
+            </div>
+    @if (ViewBag.Resultado != null)
+    {
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                @if (ViewBag.Resultado == "Exitosa")
+                {
+                    <div class="alert alert-primary" role="alert">
+                        La Carga Fue  @ViewBag.Resultado
+                    </div>
+                    @*<script>
+                            alert("registro Exitoso");
+                        </script>*@
+                }
+                else
+                {
+                    <div class="alert alert-danger" role="alert">
+                        La Carga Fue  @ViewBag.Resultado
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+</div>
+
+

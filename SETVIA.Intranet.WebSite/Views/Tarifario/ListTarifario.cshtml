@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "ListTarifario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container">
+    <div style="padding:70px;">
+
+        @*<div class="row">
+
+                <article class="col-12 col-lg-5 mb-5">
+                    <p>Bienvenido</p>
+                    <p class="fs-5 lead">David F.</p>
+
+                </article>
+
+                <article class="col-12 col-lg-5 order-lg-1 mb-5">
+                    <p>Perfil: Subgerente </p>
+
+                </article>
+            </div>*@
+
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Lista de Empresas</h2>
+            </div>
+
+            <div class="col-4 text-end">
+                <a type="button" href="@Url.Action("Index","Home")" class="btn btn-outline-primary">
+                    Atras
+                </a>
+            </div>
+        </div>
+        @*<div class="col-4">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="empDepart" name="empDepart" aria-label="Floating label select example">
+                        <option value="" selected>SELECCIONE UNA OPCIÓN</option>
+                        <option value="PERIÓDICA">PERIÓDICA</option>
+                        <option value="NO PERIÓDICA">NO PERIÓDICA</option>
+                    </select>
+                    <label for="empDepart">Tipo de información</label>
+                </div>
+            </div>*@
+        <br />
+        <br />
+        <table aria-describedby="seccionListaDocumentos" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Código Vía</th>
+                    <th scope="col" class="align-middle">Nombre Empresa</th>
+                    <th scope="col" class="align-middle">Cantidad Operadores</th>
+                    <th scope="col" class="align-middle">Cantidad Usuarios</th>
+                    <th scope="col" class="align-middle">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle">LP0001</td>
+                    <td class="align-middle">Empresa 1</td>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Activo</td>
+
+                    <!--<td class="align-middle">
+                    <div class="row row-cols-1">
+                        <div class="col">Enviado</div>-->
+                    @*<div class="col">
+                            <div class="row row-cols-3">
+                                <div class="col">
+                                    <a class="link-success" href="/(S(werbj4vnnev0njfedtw54agj))/Documento/DocRegulariz/5019" title="Regularizado.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="link-warning" href="/(S(werbj4vnnev0njfedtw54agj))/Documento/DocObservado/5019" title="Observado.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a class="link-danger" href="/(S(werbj4vnnev0njfedtw54agj))/Documento/DocDesestimar/5019" title="Desestimar.">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>*@
+                    <!--</div>
+                    </td>-->
+
+                </tr>
+                <tr>
+                    <td class="align-middle">Lp0002</td>
+                    <td class="align-middle">Empresa 2</td>
+                    <td class="align-middle"> 3</td>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Activo</td>
+                </tr>
+                <tr>
+                    <td class="align-middle">Lp0003</td>
+                    <td class="align-middle">Empresa 3</td>
+                    <td class="align-middle"> 3</td>
+                    <td class="align-middle">3</td>
+                    <td class="align-middle">Baja</td>
+                </tr>
+                <tr>
+                    <td class="align-middle">Lp0004</td>
+                    <td class="align-middle">Empresa 4</td>
+                    <td class="align-middle"> 2</td>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Activo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

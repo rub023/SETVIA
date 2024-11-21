@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "ListUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David A. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container" style="background-color: #f2f6fa">
+    <div style="padding:20px">
+        <h3>Agregar Nuevo Usuario</h3>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Empresa</th>
+                <th>Email Empresa</th>
+                <th>Usuario</th>
+                <th>Password</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*@foreach (var user in Model)
+            {*@
+                <tr>
+                    <td>1</td>
+                    <td>Empresa1.SRL</td>
+                    <td>Empresa1@hotmail.com</td>
+                    <td>Empresa1User</td>
+                    <td>**************</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                        @*<button type="button">Eliminar</button>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Empresa2.SRL</td>
+                    <td>Empresa2hotmail.com</td>
+                    <td>Empresa2User</td>
+                    <td>**************</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                        @*<button type="button">Eliminar</button>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Empresa3.SRL</td>
+                    <td>Empresa3@gmail.com</td>
+                    <td>Empresa3User</td>
+                    <td>**************</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                        @*<button type="button">Eliminar</button>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Empresa4.SRL</td>
+                    <td>Empresa4@gmail.com</td>
+                    <td>Empresa4User</td>
+                    <td>**************</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                        @*<button type="button">Eliminar</button>*@
+                    </td>
+                </tr>
+            @*}*@ @*}*@
+        </tbody>
+    </table>
+
+
+
+    </div>
+</div>
+
+
+

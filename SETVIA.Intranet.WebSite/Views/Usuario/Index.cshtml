@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David A. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container" style="background-color: #f2f6fa">
+    <div style="padding:20px">
+        <!--<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Fecha de Nacimiento</th>
+                </tr>
+            </thead>
+            <tbody>-->
+                @*@foreach (var user in Model)
+                    {*@
+                <!--<tr>
+                    <td>1</td>
+                    <td>David</td>
+                    <td>David@hotmail.com</td>
+                    <td>01/01/2024</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Miguel</td>
+                    <td>Miguel@hotmail.com</td>
+                    <td>01/01/2024</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ruddy</td>
+                    <td>Ruddy@gmail.com</td>
+                    <td>01/01/2024</td>
+                </tr>-->
+                @*}*@
+            <!--</tbody>
+        </table>-->
+
+        <h3>Agregar Nuevo Usuario</h3>
+        <form asp-action="AddUser" method="post">
+            <div class="row">
+                <div class="col-sm-6 col-lg-6 col-xl-6">
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="socDepart" name="socDepart" aria-label="Floating label select example">
+                            <option value="" selected>SELECCIONE UNA EMPRESA</option>
+                            <option value="E01">Empresa1</option>
+                            <option value="E02">Empresa2</option>
+                            <option value="E03">Empresa3</option>
+                            <option value="E04">Empresa4</option>
+                            @*@foreach (var dep in @ViewBag.depar)
+                        {
+                            <option value="@dep">@dep</option>
+                        }*@
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Email Empresa">
+                <label for="Email">Email Empresa</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre Empresa">
+                <label for="Name">Usuario de Empresa</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="Birthdate" name="Birthdate" placeholder="Password">
+                <label for="Birthdate">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Crear Usuario
+            </button>
+        </form>
+    </div>
+</div>
+
+

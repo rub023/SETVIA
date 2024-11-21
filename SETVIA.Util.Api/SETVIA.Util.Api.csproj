@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B44300CB-57BD-4766-BDF3-0DFEF54AC483}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SETVIA.Util.Api</RootNamespace>
+    <AssemblyName>SETVIA.Util.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EndpointHelper.cs" />
+    <Compile Include="Method.cs" />
+    <Compile Include="Model\Parameter\Administrador\CreateAdminLoginParameter.cs" />
+    <Compile Include="Model\Parameter\Administrador\ReadIDAdministrador.cs" />
+    <Compile Include="Model\Parameter\Administrador\UpdateAdministradorParameter.cs" />
+    <Compile Include="Model\Parameter\CostoInfraccion\ReadIDCostoInfraccion.cs" />
+    <Compile Include="Model\Parameter\CostoInfraccion\UpdateCostoInfraccionParameter.cs" />
+    <Compile Include="Model\Parameter\CreateAdministradorParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\CreateDetalleParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\CreateDeudaUsoParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\CreateDParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\CreatePruebaUsoDetalleParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\ReadPlaca.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\UpdateModificarAConcluidoParquepParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\UpdatePagoUsoParquepParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\UpdateTiempoParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\DetalleParqueo\UpdateTiempoUsoParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\DeudaInmovilizado\InmovilizadoPagoRead.cs" />
+    <Compile Include="Model\Parameter\DeudaInmovilizado\ReadDeudaInmovilizado.cs" />
+    <Compile Include="Model\Parameter\DeudaInmovilizado\ReadDeudaInmovilizadoParqueo.cs" />
+    <Compile Include="Model\Parameter\DEudaPAgos\ReadDeudaParqueo.cs" />
+    <Compile Include="Model\Parameter\DEudaPAgos\UpdatePagoDeudaUsoParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\DeudaRemolque\ReadDeudaRemolqueParqueo.cs" />
+    <Compile Include="Model\Parameter\Empresa\CreateEmpresaLoginParameter.cs" />
+    <Compile Include="Model\Parameter\Empresa\CreateEmpresaParameter.cs" />
+    <Compile Include="Model\Parameter\Empresa\ReadIDEmpresa.cs" />
+    <Compile Include="Model\Parameter\Empresa\UpdateEmpresaEstadoParameter.cs" />
+    <Compile Include="Model\Parameter\Empresa\UpdateEmpresaParameter.cs" />
+    <Compile Include="Model\Parameter\ExtensionParqueo\CreateExtensionParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\ExtensionParqueo\PlacaERead.cs" />
+    <Compile Include="Model\Parameter\ExtensionParqueo\UpdateModificarExtenAConcluidoParquepParameter.cs" />
+    <Compile Include="Model\Parameter\ExtensionParqueo\UpdatePagoExtensionParquepParameter.cs" />
+    <Compile Include="Model\Parameter\Extorno\ExtornoParameter.cs" />
+    <Compile Include="Model\Parameter\Feriado\CreateFeriadoParameter.cs" />
+    <Compile Include="Model\Parameter\Feriado\ReadIdFeriado.cs" />
+    <Compile Include="Model\Parameter\Feriado\UpdateFeriadoParameter.cs" />
+    <Compile Include="Model\Parameter\Horario\CreateHorarioParameter.cs" />
+    <Compile Include="Model\Parameter\Horario\ReadIDHorario.cs" />
+    <Compile Include="Model\Parameter\Horario\UpdateHorarioParameter.cs" />
+    <Compile Include="Model\Parameter\Inmovilizado\CreateInmovilizadoParameter.cs" />
+    <Compile Include="Model\Parameter\Inmovilizado\UpdateModificarLieradoAConcluidoParquepParameter.cs" />
+    <Compile Include="Model\Parameter\Inmovilizado\UpdatePagInmovilizadoParameter.cs" />
+    <Compile Include="Model\Parameter\LoginRequest.cs" />
+    <Compile Include="Model\Parameter\PagoExtension\UpdatePagoExtensionUsoParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\PagoInmovilizado.cs" />
+    <Compile Include="Model\Parameter\PagoInmovil\PagoInmovilizadoParameter.cs" />
+    <Compile Include="Model\Parameter\PagoRemolcado\PagoRemolcadoParameter.cs" />
+    <Compile Include="Model\Parameter\Parqueo\CreateParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\Parqueo\ReadIDParqueo.cs" />
+    <Compile Include="Model\Parameter\Parqueo\UpdateParqueoParameter.cs" />
+    <Compile Include="Model\Parameter\Personal\CreatePersonaLoginParameter.cs" />
+    <Compile Include="Model\Parameter\Personal\CreatePersonalParameter.cs" />
+    <Compile Include="Model\Parameter\Personal\ReadIDPersonal.cs" />
+    <Compile Include="Model\Parameter\Personal\UpdatePersonalParameter.cs" />
+    <Compile Include="Model\Parameter\Remolcado\CreateRemolcadoParameter.cs" />
+    <Compile Include="Model\Parameter\Remolcado\UpdateModificarRemolcadoALiberadoParameter.cs" />
+    <Compile Include="Model\Parameter\Remolcado\UpdateModificarRLiberadoAConcluidoParameter.cs" />
+    <Compile Include="Model\Parameter\Remolcado\UpdatePagoRemolcadoParameter.cs" />
+    <Compile Include="Model\Parameter\Tarifario\CreateTarifarioParameter.cs" />
+    <Compile Include="Model\Parameter\Tarifario\ReadIDTarifario.cs" />
+    <Compile Include="Model\Parameter\Tarifario\UpdateTarifarioParameter.cs" />
+    <Compile Include="Model\Parameter\TipoPago\CreateTipoPagoParameter.cs" />
+    <Compile Include="Model\Response\Administrador\AdministradorReadID.cs" />
+    <Compile Include="Model\Response\Administrador\ListadoAdministrador.cs" />
+    <Compile Include="Model\Parameter\CostoInfraccion\CreateCostoInfraccionParameter.cs" />
+    <Compile Include="Model\Response\CostoInfraccion\CostoInfraccionReadID.cs" />
+    <Compile Include="Model\Response\DetalleParqueo\DetalleParqueoResponse.cs" />
+    <Compile Include="Model\Response\DetalleParqueo\DetalleResposnse.cs" />
+    <Compile Include="Model\Response\DetalleParqueo\ListadoTipoEstadoV.cs" />
+    <Compile Include="Model\Response\DetalleParqueo\PlacaRead.cs" />
+    <Compile Include="Model\Response\DetalleParqueo\UpdateExtensiondeTiempoParqueoParameter.cs" />
+    <Compile Include="Model\Response\DeudaInmovilizado\DeudaInmovilizadoParqueoRead.cs" />
+    <Compile Include="Model\Response\DeudaInmovilizado\InmovilizadoBuscaResponse.cs" />
+    <Compile Include="Model\Response\DeudaInmovilizado\ListadoInmovilizado.cs" />
+    <Compile Include="Model\Response\DeudaInmovilizado\ReadinmovilizadoParqueo.cs" />
+    <Compile Include="Model\Response\DeudaInmovilizado\UpdatePagoInfracionUsoParqueoParameter.cs" />
+    <Compile Include="Model\Response\DeudaREmolque\DeudaRemolcadorParqueoRead.cs" />
+    <Compile Include="Model\Response\DeudaREmolque\DeudaRemolqueParqueoRead.cs" />
+    <Compile Include="Model\Response\DeudaREmolque\ListadoRemolques.cs" />
+    <Compile Include="Model\Response\DeudasPagos\DeudaExtensionRead.cs" />
+    <Compile Include="Model\Response\DeudasPagos\DeudaParqueoRead.cs" />
+    <Compile Include="Model\Response\Empresa\EmpresaReadID.cs" />
+    <Compile Include="Model\Response\Empresa\ListadoEmpresa.cs" />
+    <Compile Include="Model\Response\CostoInfraccion\ListCostoInfraccion.cs" />
+    <Compile Include="Model\Response\Feriado\FeriadoReadID.cs" />
+    <Compile Include="Model\Response\Feriado\ListadoFeriado.cs" />
+    <Compile Include="Model\Response\Horario\HorarioReadID.cs" />
+    <Compile Include="Model\Response\Horario\ListadoHorario.cs" />
+    <Compile Include="Model\Response\LogGlobal\LogDetalle.cs" />
+    <Compile Include="Model\Response\Parqueo\ListadoParqueo.cs" />
+    <Compile Include="Model\Response\Parqueo\ParqueoReadID.cs" />
+    <Compile Include="Model\Response\Personal\ListadoPersonal.cs" />
+    <Compile Include="Model\Response\Personal\PersonalReadID.cs" />
+    <Compile Include="Model\Response\Tarifario\ListadoTarifario.cs" />
+    <Compile Include="Model\Response\Tarifario\TarifarioReadID.cs" />
+    <Compile Include="Model\Response\TipoPago\ListadoTipoPago.cs" />
+    <Compile Include="PagoDeudaResponse.cs" />
+    <Compile Include="PagoDeudasResponse.cs" />
+    <Compile Include="PagoResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="ResponseApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Response\NewFolder1\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

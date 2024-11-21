@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "ListVia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container">
+    <div style="padding:70px;">
+
+        @*<div class="row">
+
+                <article class="col-12 col-lg-5 mb-5">
+                    <p>Bienvenido</p>
+                    <p class="fs-5 lead">David F.</p>
+
+                </article>
+
+                <article class="col-12 col-lg-5 order-lg-1 mb-5">
+                    <p>Perfil: Subgerente </p>
+
+                </article>
+            </div>*@
+
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Lista de Empresas</h2>
+            </div>
+
+            <div class="col-4 text-end">
+                <a type="button" href="@Url.Action("Index","Home")" class="btn btn-outline-primary">
+                    Atras
+                </a>
+            </div>
+        </div>        
+        <br />
+        <br />
+        <table aria-describedby="seccionListaDocumentos" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Nro.</th>
+                    <th scope="col" class="align-middle">Nombre Empresa</th>
+                    <th scope="col" class="align-middle">Nombre Representante</th>
+                    <th scope="col" class="align-middle">Fecha Autorización</th>
+                    <th scope="col" class="align-middle">Dirección</th>
+                    <th scope="col" class="align-middle">NIT</th>
+                    <th scope="col" class="align-middle">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle">1</td>
+                    <td class="align-middle">Empresa.SRL</td>
+                    <td class="align-middle">Mamen Savedra</td>
+                    <td class="align-middle">01-10-2024</td>
+                    <td class="align-middle">Z. San Miguel</td>
+                    <td class="align-middle">Activo</td>                   
+                </tr>
+                <tr>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Empresa2.SRL</td>
+                    <td class="align-middle">Jorge Medrano</td>
+                    <td class="align-middle">05-10-2024</td>
+                    <td class="align-middle">Z. Los Pinos</td>
+                    <td class="align-middle">Activo</td>
+                </tr>
+                <tr>
+                    <td class="align-middle">3</td>
+                    <td class="align-middle">Empresa3.SRL</td>
+                    <td class="align-middle">Rene Villacorta</td>
+                    <td class="align-middle">10-10-2023</td>
+                    <td class="align-middle">Z. San Miguel</td>
+                    <td class="align-middle">Baja</td>
+                </tr>
+                <tr>
+                    <td class="align-middle">4</td>
+                    <td class="align-middle">Empresa4.SRL</td>
+                    <td class="align-middle">Mario Perez</td>
+                    <td class="align-middle">20-10-2024</td>
+                    <td class="align-middle">Z. Las delicias</td>
+                    <td class="align-middle">Activo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

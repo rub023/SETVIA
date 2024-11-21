@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "ListAsignacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container">
+    <div style="padding:70px;">
+
+        @*<div class="row">
+
+                <article class="col-12 col-lg-5 mb-5">
+                    <p>Bienvenido</p>
+                    <p class="fs-5 lead">David F.</p>
+
+                </article>
+
+                <article class="col-12 col-lg-5 order-lg-1 mb-5">
+                    <p>Perfil: Subgerente </p>
+
+                </article>
+            </div>*@
+
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Lista de Asiganciones</h2>
+            </div>
+
+            <div class="col-4 text-end">
+                <a type="button" href="@Url.Action("Index","Home")" class="btn btn-outline-primary">
+                    Atras
+                </a>
+            </div>
+        </div>
+        <br />
+        <br />
+        <table aria-describedby="seccionListaDocumentos" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Nro.</th>
+                    <th scope="col" class="align-middle">Nombre Empresa</th>
+                    <th scope="col" class="align-middle">Código vía</th>
+                    <th scope="col" class="align-middle">Estado</th>
+                    <th scope="col" class="align-middle">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="align-middle">1</td>
+                    <td class="align-middle">Empresa.SRL</td>
+                    <td class="align-middle">AB01</td>
+                    <td class="align-middle">Habilitado</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                        @*<button type="button">Eliminar</button>*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle">2</td>
+                    <td class="align-middle">Empresa2.SRL</td>
+                    <td class="align-middle">AB02</td>
+                    <td class="align-middle">Baja</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle">3</td>
+                    <td class="align-middle">Empresa2.SRL</td>
+                    <td class="align-middle">AB03</td>
+                    <td class="align-middle">Habilitado</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle">4</td>
+                    <td class="align-middle">Empresa3.SRL</td>
+                    <td class="align-middle">AB04</td>
+                    <td class="align-middle">Habilitado</td>
+                    <td class="align-middle">
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+

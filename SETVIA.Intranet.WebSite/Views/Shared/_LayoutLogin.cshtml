@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cuenta Digital Empresarial</title>
+    <link href="~/Content/SiteDigital.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/datepicker/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/sweetalert2.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/datepicker/locales/bootstrap-datepicker.es.min.js"></script>
+    <style>
+        /*.header {
+            overflow: hidden;
+            height: 96px;
+            padding: 20px 10px;
+            background: #002B76;
+            color: white;
+        }*/
+
+        /*registro*/
+        .conteRegistro {
+            /*position: absolute;*/
+            /*width: 759px;*/
+            /*height: 654px;*/
+            left: 534px;
+            top: 229px;
+            border: 1px solid #DADCE0;
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin: auto;
+        }
+        /*ss*/
+
+        body {
+            /* display: grid;*/
+            /*font-family: Arial, sans-serif;*/
+            /*grid-gap: 1rem;*/
+            grid-template-areas:
+                "header header"
+                "sidebar main";
+            /*  grid-template-columns: 277px auto;
+            grid-template-rows: auto 100vh;*/
+            /*grid-template-rows: 96px 100vh;*/
+        }
+
+        .o-header {
+            background: #ffff;
+            grid-area: header;
+            padding: 20px 10px;
+            /*grid-area: header;
+            padding: 1.5rem;*/
+        }
+
+        .o-sidebar {
+            background: rgba(0, 43, 118, 0.1);
+            grid-area: sidebar;
+        }
+
+        .o-main {
+            background: rgba(0, 43, 118, 0.1);
+            grid-area: main;
+        }
+
+        /*estilos nuevos*/
+        .p-100-0 {
+            padding: 100px
+        }
+
+        .oculta {
+            display: block;
+        }
+
+        @@media (max-width: 1044px) {
+            .p-100-0 {
+                padding: 70px 10px 10px 10px;
+            }
+        }
+
+        @@media (max-width: 808px) {
+
+            body {
+                display: grid;
+                /*font-family: Arial, sans-serif;*/
+                /*grid-gap: 1rem;*/
+                grid-template-areas:
+                    "header header"
+                    "sidebar main";
+                grid-template-columns: 100px auto;
+                /*grid-template-rows: auto 100vh;*/
+                /*grid-template-rows: 96px 100vh;*/
+            }
+
+            .oculta {
+                display: none;
+            }
+        }
+
+        @@media (max-width: 720px) {
+            .p-100-0 {
+                padding: 70px 0px 0px 0px;
+            }
+
+            body {
+                display: grid;
+                /*font-family: Arial, sans-serif;*/
+                /*grid-gap: 1rem;*/
+                grid-template-areas:
+                    "header header"
+                    "sidebar main";
+                grid-template-columns: 10px auto;
+                /*grid-template-rows: auto 100vh;*/
+                /*grid-template-rows: 96px 100vh;*/
+            }
+
+            .wi-100 {
+                width: 500px;
+            }
+        }
+
+        @@media (max-width: 504px) {
+            .wi-100 {
+                width: 400px;
+            }
+        }
+
+        @@media (max-width: 404px) {
+            .wi-100 {
+                width: 300px;
+            }
+        }
+
+        @@media (max-width: 304px) {
+            .wi-100 {
+                width: 200px;
+            }
+        }
+        /*fin de estilos*/
+    </style>
+</head>
+<body>
+    <div class="o-header header">
+        <div class="logo">
+            <a class="navbar-brand" href="#">
+                <img src="~/Content/imagenes/Banners/gamlp.png" alt="logo del sitio" width="150">
+            </a>
+        </div>
+    </div>
+
+    @*<div class="o-sidebar">
+            <div style="position: relative">
+                <div style="position: absolute; top: 424px; left: 0px;" id="imagen_compu" class="oculta">
+                    <img src="~/Content/img/compu_login.png" alt="compu_login.png" class="wi-100" />
+                </div>
+            </div>
+        </div>*@
+
+    <main class="o-main" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-0"></div>
+                <div class="col-lg-10 col-md-10 col-sm-12">
+                    <div class="p-100-0" style=" margin-left: 139px; margin-right: 96px;">
+                        <div class="conteRegistro">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-0"></div>
+            </div>
+        </div>
+    </main>
+    @RenderSection("scripts", required: false)
+</body>
+</html>m

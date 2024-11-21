@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .dropdown-checkboxes {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+
+        .dropdown-checkboxes label {
+            display: block;
+            padding: 5px;
+        }
+</style>
+
+<div class="alert alert-primary" role="alert">
+    Bienvenido:  David F. <a href="#" class="alert-link">Administrador</a>
+</div>
+<div class="container" style="background-color: #f2f6fa">
+    <div style="padding:20px">
+        <h2>Designación de Vías a Empresa</h2>
+        <input type="hidden" name="empEstado" id="empEstado" value="" />
+        @*<div class="mb-3">
+                <label class="texto2">Ingresa los datos de la forma más precisa posible</label>
+            </div>*@
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="socDepart" name="socDepart" aria-label="Floating label select example">
+                        <option value="" selected>SELECCIONE UNA EMPRESA</option>
+                        <option value="E01">Empresa1</option>
+                        <option value="E02">Empresa2</option>
+                        <option value="E03">Empresa3</option>
+                        <option value="E04">Empresa4</option>
+                        @*@foreach (var dep in @ViewBag.depar)
+                            {
+                                <option value="@dep">@dep</option>
+                            }*@
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-xl-6">
+                  
+                    <div class="form-floating mb-3">
+                    <select class="form-select" id="socDepart" name="socDepart" aria-label="Floating label select example">
+                        <option value="" selected>SELECCIONE LAS VIAS</option>
+                        <option value="E01">AB01</option>
+                        <option value="E02">AB02</option>
+                        <option value="E03">AB03</option>
+                        <option value="E04">AB04</option>
+                        <option value="E01">AB05</option>
+                        <option value="E02">AB06</option>
+                        <option value="E03">AB07</option>
+                        <option value="E04">AB08</option>
+                        <option value="E01">AB09</option>
+                        <option value="E02">AB10</option>
+                        <option value="E03">AB11</option>
+                        <option value="E04">AB12</option>
+                  
+                    </select>
+                    </div>
+            </div>
+
+
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("Apertura","Formulario")" class="btn btn-outline-primary" style="text-decoration: none;">Volver</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+            @*</form>*@
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        function formatState(state) {
+            if (!state.id) {
+                return state.text;
+            }
+            var $state = $(
+                '<span><input type="checkbox" class="select2-checkbox" /> ' + state.text + '</span>'
+            );
+            $state.find('.select2-checkbox').prop('checked', state.selected);
+            $state.find('.select2-checkbox').on('click', function () {
+                state.selected = !state.selected;
+                $(this).prop('checked', state.selected);
+                $('#socDepart').trigger('change');
+            });
+            return $state;
+        }
+
+        $('.js-example-basic-multiple').select2({
+            placeholder: 'SELECCIONE LAS VIAS',
+            closeOnSelect: false,
+            templateResult: formatState,
+            templateSelection: formatState
+        });
+    });
+</script>
